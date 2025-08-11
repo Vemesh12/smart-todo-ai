@@ -132,3 +132,9 @@ Output:
 - Suggested Deadline: 2025-08-12 17:00
 - Suggested Category: Reports
 - Enhanced Description: "Prepare detailed weekly report with KPIs and key insights for client meeting."
+
+
+#screenshots
+Screenshot (7).png
+Screenshot (8).png
+Screenshot (9).png
