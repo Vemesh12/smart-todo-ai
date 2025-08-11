@@ -26,23 +26,6 @@ Full‑stack Smart Todo List with AI‑powered prioritization, deadlines, and co
 - PostgreSQL 13+
 - (Optional) LM Studio running locally if you want enhanced AI text
 
-## Backend Setup (PostgreSQL)
-Create DB and user (in psql as superuser `postgres`). If you already have a DB/user, skip to env.
-
-```sql
-CREATE DATABASE smarttodo;
-CREATE USER smarttodo_user WITH PASSWORD 'strong_password';
-GRANT ALL PRIVILEGES ON DATABASE smarttodo TO smarttodo_user;
-```
-
-Create `backend/.env`:
-```
-POSTGRES_DB=smarttodo
-POSTGRES_USER=smarttodo_user
-POSTGRES_PASSWORD=strong_password
-POSTGRES_HOST=localhost
-POSTGRES_PORT=5432
-```
 
 Install deps, migrate, load sample data, run server (Windows PowerShell):
 ```powershell
@@ -55,22 +38,6 @@ python manage.py loaddata fixtures\sample_data.json  # optional
 python manage.py runserver 0.0.0.0:8000
 ```
 
-Troubleshooting Postgres permissions
-If you see “permission denied for schema public” or missing tables after switching from SQLite, fix ownership/privileges and re-run migrate:
-```sql
-ALTER DATABASE smarttodo OWNER TO smarttodo_user;
-\c smarttodo
-ALTER SCHEMA public OWNER TO smarttodo_user;
-GRANT ALL ON SCHEMA public TO smarttodo_user;
-GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO smarttodo_user;
-GRANT ALL PRIVILEGES ON ALL SEQUENCES IN SCHEMA public TO smarttodo_user;
-ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON TABLES TO smarttodo_user;
-ALTER DEFAULT PRIVILEGES IN SCHEMA public GRANT ALL ON SEQUENCES TO smarttodo_user;
-```
-Then:
-```powershell
-python manage.py migrate
-```
 
 ## Frontend Setup
 ```powershell
@@ -110,15 +77,7 @@ Example create task body:
 - `tasks_category`: name (unique), description, usage_count, created_at, updated_at
 - `context_contextentry`: content, source_type, processed_insights (JSON), created_at, updated_at
 
-## AI Integration
-- Heuristics (default): keyword urgency + context influence, sentiment/keywords, complexity, category hints, description enrichment
-- LM Studio (optional):
-  - Set env vars then restart Django:
-    ```
-    AI_PROVIDER=lm_studio
-    LM_STUDIO_BASE_URL=http://localhost:1234/v1
-    LM_STUDIO_MODEL=qwen2.5:latest
-    ```
+
 
 ## Sample Data
 - Backend fixtures: `backend/fixtures/sample_data.json`
@@ -135,6 +94,12 @@ Output:
 
 
 #screenshots
-Screenshot (7).png
-Screenshot (8).png
-<img width="1920" height="1080" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/323ddd41-743d-4bec-a6c3-0bb2070db409" />
+<img width="1920" height="965" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/d5df63b5-ea46-4382-b2fb-b9f6439a7e58" />
+<img width="1920" height="962" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/8ead3933-8cda-4852-ab23-2ec8ac8639e4" />
+<img width="1920" height="965" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/f9e8b4d0-df39-4864-b76e-76ef14d75183" />
+<img width="1455" height="400" alt="image" src="https://github.com/user-attachments/assets/a927576c-39bb-40f4-8196-6e88ccf97f13" />
+
+
+
+
+
