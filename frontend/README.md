@@ -137,4 +137,4 @@ Output:
 #screenshots
 Screenshot (7).png
 Screenshot (8).png
-Screenshot (9).png
+<img width="1920" height="1080" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/323ddd41-743d-4bec-a6c3-0bb2070db409" />
