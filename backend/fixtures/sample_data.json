@@ -1,0 +1,53 @@
+[
+  {
+    "model": "tasks.category",
+    "pk": 1,
+    "fields": {"name": "Work", "description": "Work related", "usage_count": 0, "created_at": "2025-01-01T00:00:00Z", "updated_at": "2025-01-01T00:00:00Z"}
+  },
+  {
+    "model": "tasks.category",
+    "pk": 2,
+    "fields": {"name": "Personal", "description": "Personal chores", "usage_count": 0, "created_at": "2025-01-01T00:00:00Z", "updated_at": "2025-01-01T00:00:00Z"}
+  },
+  {
+    "model": "tasks.task",
+    "pk": 1,
+    "fields": {
+      "title": "Prepare weekly report",
+      "description": "Summarize KPIs and blockers",
+      "category": 1,
+      "priority_score": 0.3,
+      "deadline": null,
+      "status": "todo",
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "tasks.task",
+    "pk": 2,
+    "fields": {
+      "title": "Buy groceries",
+      "description": "Milk, eggs, bread",
+      "category": 2,
+      "priority_score": 0.2,
+      "deadline": null,
+      "status": "todo",
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  },
+  {
+    "model": "context.contextentry",
+    "pk": 1,
+    "fields": {
+      "content": "Meeting moved to tomorrow, please send the report ASAP",
+      "source_type": "email",
+      "processed_insights": {},
+      "created_at": "2025-01-01T00:00:00Z",
+      "updated_at": "2025-01-01T00:00:00Z"
+    }
+  }
+]
+
+
